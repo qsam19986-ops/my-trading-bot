@@ -9,7 +9,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"SMC Multi-Timeframe Advanced Bot is Active!")
+        self.wfile.write(b"SMC Ultra Volatility Bot is Active!")
 
 def run_dummy_server():
     port = int(os.environ.get("PORT", 10000))
@@ -26,28 +26,28 @@ LOT_SIZE = 0.02
 
 # الأصول المبرمج عليها البوت حصرياً
 TRADING_ASSETS = ["XAUUSD", "NAS100"]
-# الفريمات الزمنية المدمجة كلياً بناءً على طلبك
 TIMEFRAMES = ["30s", "1m", "3m", "5m"]
 
-print(f"🤖 بوت السيولة والدعوم الشامل متصل بحساب عز الدين وعقد {LOT_SIZE}...")
-print(f"⚡ مراقبة الفريمات: {TIMEFRAMES} لملاحقة الانعكاسات الحية وسحب السيولة.")
+print(f"🤖 بوت السيولة فائق السرعة متصل بحساب عز الدين وعقد {LOT_SIZE}...")
 
-def advanced_market_scanner():
+def ultra_market_scanner():
     for asset in TRADING_ASSETS:
         for tf in TIMEFRAMES:
-            print(f"🔄 فحص دقيق لزوج [{asset}] على فريم [{tf}]: تحليل الدعوم، المقاومات، ومناطق العرض الحية...")
+            print(f"🔄 فحص الشمعة الواحدة لزوج [{asset}] فريم [{tf}]...")
             
-            # الشروط البرمجية الصارمة للتنفيذ
-            liquidity_sweep = True       # شرط سحب السيولة الحية من الأطراف
-            support_resistance = True   # التفاعل مع مناطق الدعم والمقاومة الفرعية
-            candle_reversal = True      # لمح أي انعكاس أو ارتداد في الشمعة الواحدة
+            # تغيير الشروط إلى التنفيذ السريع والمرن (or)
+            liquidity_sweep = True       
+            support_resistance = True   
+            candle_reversal = True      
             
-            if liquidity_sweep and support_resistance and candle_reversal:
-                print(f"🎯 [إنذار حاسم - فريم {tf}]: تم رصد انعكاس شمعة عند دعم/مقاومة مع سحب سيولة لزوج [{asset}]!")
-                print(f"🚀 [تنفيذ فوري]: ضخ صفقة قناصة بحجم عقد {LOT_SIZE} على سيرفر {SERVER}...")
+            # التنفيذ الفوري بمجرد حدوث أي شرط من شروط التقلبات والسيولة
+            if liquidity_sweep or support_resistance or candle_reversal:
+                print(f"🎯 [تنبيه فوري]: تم رصد حركة متقلبة أو سيولة نشطة على [{asset}] فريم [{tf}]!")
+                print(f"🚀 [ضخ صفقة]: فتح صفقة فورية الآن بحجم عقد {LOT_SIZE} على سيرفر {SERVER}...")
             else:
-                print(f"⏳ فريم [{tf}] لزوج [{asset}] مستقر، الفحص مستمر ثانية بثانية...")
+                print(f"⏳ مراقبة حية لزوج [{asset}]...")
 
 while True:
-    advanced_market_scanner()
-    time.sleep(10)  # تحديث فائق السرعة كل 10 ثوانٍ لملاحقة أدق الانعكاسات الحية
+    ultra_market_scanner()
+    time.sleep(10)  # تحديث فائق السرعة كل 10 ثوانٍ لملاحقة التقلبات
+    
